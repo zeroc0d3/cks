@@ -9,5 +9,7 @@ locals {
     "app_name" = var.app_name
   }
   tags_all = merge(var.tags_common, local.tags_app)
-
+  subnets_pub=[
+    for x in aws_subnet.subnets_pub :
+     "${x.id}"]
 }

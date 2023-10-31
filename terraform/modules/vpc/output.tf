@@ -6,6 +6,9 @@ output "subnets_az_cmdb" {
   value = local.subnets_az_cmdb
 }
 
+output "subnets_pub" {
+  value =local.subnets_pub
+}
 output "vpc_id" {
   value = aws_vpc.default.id
 }

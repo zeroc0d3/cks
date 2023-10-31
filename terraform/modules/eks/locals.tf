@@ -1,6 +1,6 @@
 
 locals {
   subnets            = var.eks.subnets
-  availability_zones = data.aws_availability_zones.available.zone_ids
+  availability_zones = var.eks.az_ids
 
 }

@@ -12,4 +12,8 @@ locals {
   subnets_pub=[
     for x in aws_subnet.subnets_pub :
      "${x.id}"]
+
+  az_ids=[
+    for x in aws_subnet.subnets_pub :
+     "${x.availability_zone_id}"]
 }

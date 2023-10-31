@@ -8,7 +8,9 @@ variable "eks" {
     version                      = string
     cloudwatch_retention_in_days = string
     allow_cidrs                  = list(string)
-    addons = map(object({
+    subnets                      = list(string)
+    az_ids                       = list(string)
+    addons                       = map(object({
       # key  - addon name
       version           = string
       resolve_conflicts = string # OVERWRITE

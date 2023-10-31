@@ -59,14 +59,14 @@ resource "aws_security_group" "eks_master" {
 
 
   tags = {
-    Name = "${var.aws}-${var.prefix}-eks"
+    Name = "${local.cluster_name}-eks"
   }
 }
 
 
 
 resource "aws_eks_cluster" "eks-cluster" {
-  name                      = "${var.aws}-${var.prefix}-eks"
+  name                      = local.cluster_name
   role_arn                  = aws_iam_role.eks-cluster.arn
   enabled_cluster_log_types = ["api", "audit"]
   version                   = var.eks.version

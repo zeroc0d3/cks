@@ -37,15 +37,15 @@ inputs = {
         resolve_conflicts = "OVERWRITE"
       }
       kube-proxy = {
-        version           = "v1.26.9-eksbuild.2"
+        version           = "v1.26.6-eksbuild.1"
         resolve_conflicts = "OVERWRITE"
       }
       coredns = {
-        version           = "v1.9.3-eksbuild.9"
+        version           = "v1.9.3-eksbuild.5"
         resolve_conflicts = "OVERWRITE"
       }
       aws-ebs-csi-driver = {
-        version           = "v1.24.0-eksbuild.1"
+        version           = "v1.20.0-eksbuild.1"
         resolve_conflicts = "OVERWRITE"
       }
     }

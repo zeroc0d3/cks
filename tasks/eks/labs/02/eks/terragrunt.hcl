@@ -32,22 +32,22 @@ inputs = {
     subnets=dependency.vpc.outputs.subnets_pub
     az_ids=dependency.vpc.outputs.az_ids
     addons                       = {
-      vpc-cni = {
-        version           = "v1.13.2-eksbuild.1"
-        resolve_conflicts = "OVERWRITE"
-      }
-      kube-proxy = {
-        version           = "v1.26.6-eksbuild.1"
-        resolve_conflicts = "OVERWRITE"
-      }
-      coredns = {
-        version           = "v1.9.3-eksbuild.5"
-        resolve_conflicts = "OVERWRITE"
-      }
-      aws-ebs-csi-driver = {
-        version           = "v1.20.0-eksbuild.1"
-        resolve_conflicts = "OVERWRITE"
-      }
+#     vpc-cni = {
+#       version           = "v1.13.2-eksbuild.1"
+#       resolve_conflicts = "OVERWRITE"
+#     }
+#     kube-proxy = {
+#       version           = "v1.26.6-eksbuild.1"
+#       resolve_conflicts = "OVERWRITE"
+#     }
+#     coredns = {
+#       version           = "v1.9.3-eksbuild.5"
+#       resolve_conflicts = "OVERWRITE"
+#     }
+#     aws-ebs-csi-driver = {
+#       version           = "v1.20.0-eksbuild.1"
+#       resolve_conflicts = "OVERWRITE"
+#     }
     }
     node_group = {
 

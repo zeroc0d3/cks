@@ -52,9 +52,9 @@ inputs = {
     node_group = {
 
       default = {
-        ec2_types     = ["t3.large"]
+        ec2_types     = ["t3.xlarge"]
         capacity_type = "SPOT"
-        desired_size  = "1"
+        desired_size  = "2"
         max_size      = "2"
         min_size      = "1"
         disk_size     = "20"

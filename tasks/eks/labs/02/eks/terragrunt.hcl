@@ -36,10 +36,10 @@ inputs = {
        version           = "v1.14.1-eksbuild.1"
        resolve_conflicts = "OVERWRITE"
      }
-#     kube-proxy = {
-#       version           = "v1.26.6-eksbuild.1"
-#       resolve_conflicts = "OVERWRITE"
-#     }
+     kube-proxy = {
+       version           = "v1.28.1-eksbuild.1"
+       resolve_conflicts = "OVERWRITE"
+     }
      coredns = {
        version           = "v1.10.1-eksbuild.2"
        resolve_conflicts = "OVERWRITE"

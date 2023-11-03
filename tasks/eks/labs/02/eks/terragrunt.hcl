@@ -44,10 +44,10 @@ inputs = {
        version           = "v1.10.1-eksbuild.2"
        resolve_conflicts = "OVERWRITE"
      }
-#     aws-ebs-csi-driver = {
-#       version           = "v1.20.0-eksbuild.1"
-#       resolve_conflicts = "OVERWRITE"
-#     }
+     aws-ebs-csi-driver = {
+       version           = "v1.24.1-eksbuild.1"
+       resolve_conflicts = "OVERWRITE"
+     }
     }
     node_group = {
 

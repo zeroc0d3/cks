@@ -40,10 +40,10 @@ inputs = {
 #       version           = "v1.26.6-eksbuild.1"
 #       resolve_conflicts = "OVERWRITE"
 #     }
-#     coredns = {
-#       version           = "v1.9.3-eksbuild.5"
-#       resolve_conflicts = "OVERWRITE"
-#     }
+     coredns = {
+       version           = "v1.10.1-eksbuild.2"
+       resolve_conflicts = "OVERWRITE"
+     }
 #     aws-ebs-csi-driver = {
 #       version           = "v1.20.0-eksbuild.1"
 #       resolve_conflicts = "OVERWRITE"

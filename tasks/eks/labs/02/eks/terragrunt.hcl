@@ -48,7 +48,7 @@ inputs = {
 #      version           = "v1.24.1-eksbuild.1"
 #      resolve_conflicts = "OVERWRITE"
 #    }
-#    }
+    }
     node_group = {
 
       default = {

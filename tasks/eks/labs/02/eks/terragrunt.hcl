@@ -32,7 +32,7 @@ inputs = {
     subnets=dependency.vpc.outputs.subnets_pub
     az_ids=dependency.vpc.outputs.az_ids
     addons                       = {
-     vpc-cni = {
+#     vpc-cni = {
 #      version           = "v1.14.1-eksbuild.1"
 #      resolve_conflicts = "OVERWRITE"
 #    }
@@ -48,7 +48,7 @@ inputs = {
 #      version           = "v1.24.1-eksbuild.1"
 #      resolve_conflicts = "OVERWRITE"
 #    }
-    }
+#    }
     node_group = {
 
       default = {

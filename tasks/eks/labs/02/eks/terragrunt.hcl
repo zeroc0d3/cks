@@ -33,21 +33,21 @@ inputs = {
     az_ids=dependency.vpc.outputs.az_ids
     addons                       = {
      vpc-cni = {
-       version           = "v1.14.1-eksbuild.1"
-       resolve_conflicts = "OVERWRITE"
-     }
-     kube-proxy = {
-       version           = "v1.28.1-eksbuild.1"
-       resolve_conflicts = "OVERWRITE"
-     }
-     coredns = {
-       version           = "v1.10.1-eksbuild.2"
-       resolve_conflicts = "OVERWRITE"
-     }
-     aws-ebs-csi-driver = {
-       version           = "v1.24.1-eksbuild.1"
-       resolve_conflicts = "OVERWRITE"
-     }
+#      version           = "v1.14.1-eksbuild.1"
+#      resolve_conflicts = "OVERWRITE"
+#    }
+#    kube-proxy = {
+#      version           = "v1.28.1-eksbuild.1"
+#      resolve_conflicts = "OVERWRITE"
+#    }
+#    coredns = {
+#      version           = "v1.10.1-eksbuild.2"
+#      resolve_conflicts = "OVERWRITE"
+#    }
+#    aws-ebs-csi-driver = {
+#      version           = "v1.24.1-eksbuild.1"
+#      resolve_conflicts = "OVERWRITE"
+#    }
     }
     node_group = {
 

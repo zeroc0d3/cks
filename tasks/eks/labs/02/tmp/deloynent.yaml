@@ -14,7 +14,7 @@ spec:
     spec:
       terminationGracePeriodSeconds: 0
       nodeSelector:
-        work_type: default
+        work_type: infra
       containers:
         - name: inflate
           image: viktoruj/ping_pong

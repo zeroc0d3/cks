@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-infra
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-infra
+  template:
+    metadata:
+      labels:
+        app: app-infra
+    spec:
+      terminationGracePeriodSeconds: 0
+      nodeSelector:
+        work_type: infra
+      containers:
+        - name: app-infra
+          image: viktoruj/ping_pong
+          resources:
+            requests:
+              cpu: 1

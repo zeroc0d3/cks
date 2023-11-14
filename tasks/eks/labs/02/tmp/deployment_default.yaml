@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: inflate
+  name: app-default
 spec:
-  replicas: 7
+  replicas: 1
   selector:
     matchLabels:
-      app: inflate
+      app: app-default
   template:
     metadata:
       labels:
-        app: inflate
+        app: app-default
     spec:
       terminationGracePeriodSeconds: 0
       nodeSelector:
-        work_type: infra
+        work_type: default
       containers:
-        - name: inflate
+        - name: app-default
           image: viktoruj/ping_pong
           resources:
             requests:

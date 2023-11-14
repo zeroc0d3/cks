@@ -21,14 +21,7 @@ spec:
           values: ["spot"]
         - key: node.kubernetes.io/instance-type
           operator: In
-          values: ["t3.medium", "t4g.medium"]
-
-#       - key: karpenter.k8s.aws/instance-category
-#         operator: In
-#         values: ["t"]
-#       - key: karpenter.k8s.aws/instance-generation
-#         operator: Gt
-#         values: ["2"]
+          values: ["t3.medium", "t4g.medium","t3.large","t4g.large","t4g.xlarge","t3.xlarge"]
       nodeClassRef:
         name: default
   limits:
@@ -50,3 +43,45 @@ spec:
   securityGroupSelectorTerms:
     - tags:
         karpenter.sh/discovery: "root-karpenter" # replace with your cluster name
+  tags:
+    Name: doordawn-eks-infra_prometheus_new
+    city: all_us
+    environment: stage
+    team: dev
+    resource_type: dynamic
+    Operation: USA
+    operation: localize
+    Environment: Staging
+  blockDeviceMappings:
+    - deviceName: /dev/xvda
+      ebs:
+        volumeSize: 30Gi
+        volumeType: gp3
+        encrypted: true
+  userData: |                   
+    #!/bin/bash 
+     set -o xtrace; 
+     /etc/eks/bootstrap.sh "doordawn-eks"  --kubelet-extra-args '--image-gc-low-threshold=50 --image-gc-high-threshold=70'
+    
+    cd /tmp
+    instance_id=$(curl http://169.254.169.254/latest/meta-data/instance-id)
+    region=$(curl http://169.254.169.254/latest/meta-data/placement/region)
+    volumes=$(aws ec2 describe-instances   --instance-ids $instance_id --region $region   --query 'Reservations[*].Instances[*].BlockDeviceMappings[*].Ebs.VolumeId' --output text)
+    
+    aws ec2 describe-instances   --instance-ids $instance_id --region $region   --query 'Reservations[].Instances[].Tags[]' --output  text > tags_list.txt
+    echo "volumes = $volumes" >tags_result.txt
+    
+    while IFS= read -r line
+    do
+      echo "-----">>tags_result.txt
+      echo "$line">>tags_result.txt
+      key=$(echo $line | cut -d' ' -f1)
+      value=$(echo $line |  cut -d' ' -f2)
+      aws_tag=${key:0:3}
+      if [[ ! "$aws_tag" == "aws" ]] ;   then
+        echo "key= $key value=$value  aws_tag=$aws_tag ">>tags_result.txt
+        aws ec2 create-tags  --region $region  --resources $volumes  --tags Key=$key,Value=$value  2>> tags_result.txt
+      fi
+    done < tags_list.txt
+    
+    aws ec2 create-tags  --region $region  --resources $volumes  --tags Key=instance_id,Value=$instance_id  2>> tags_result.txt

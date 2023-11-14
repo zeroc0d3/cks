@@ -21,7 +21,7 @@ spec:
           values: ["spot"]
         - key: node.kubernetes.io/instance-type
           operator: In
-          values: ["t3.medium", "t4g.medium"]
+          values: ["t3.medium", "t4g.medium","t3.large","t4g.large","t4g.xlarge","t3.xlarge"]
 
 #       - key: karpenter.k8s.aws/instance-category
 #         operator: In
@@ -59,6 +59,12 @@ spec:
     Operation: USA
     operation: localize
     Environment: Staging
+  blockDeviceMappings:
+    - deviceName: /dev/xvda
+      ebs:
+        volumeSize: 30Gi
+        volumeType: gp3
+        encrypted: true
   userData: |                   
     #!/bin/bash 
      set -o xtrace; 

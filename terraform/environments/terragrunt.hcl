@@ -12,10 +12,10 @@ generate "backend" {
 terraform {
   backend "s3" {}
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.17.0"
-    }
+ #  aws = {
+ #    source  = "hashicorp/aws"
+ #    version = "~> 5.17.0"
+ #  }
   }
 }
 variable "s3_k8s_config" {

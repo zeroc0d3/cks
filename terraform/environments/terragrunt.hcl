@@ -12,6 +12,11 @@ generate "backend" {
 terraform {
   backend "s3" {}
 }
+
+provider "aws" {
+  region = "${local.backend_region}"
+}
+
 variable "s3_k8s_config" {
 default="${local.backend_bucket}"
 }

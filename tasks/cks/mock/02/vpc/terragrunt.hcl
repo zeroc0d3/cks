@@ -11,7 +11,7 @@ terraform {
 }
 
 inputs = {
-  name = "my-vpc"
+  name = "stage-localize"
   cidr = "10.0.0.0/16"
 
   azs             = ["eun1-az3"]

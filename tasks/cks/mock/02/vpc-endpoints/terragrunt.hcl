@@ -30,14 +30,6 @@ inputs = {
       route_table_ids = dependency.vpc.outputs.private_route_table_ids
     },
 
-      sqs = {
-      service             = "sqs"
-      private_dns_enabled = true
-      security_group_ids  = [dependency.vpc.outputs.default_security_group_id]
-      subnet_ids          = dependency.vpc.outputs.private_subnets
-      tags                = { Name = "sqs-vpc-endpoint" }
-    },
-
     dynamodb = {
       service         = "dynamodb"
       service_type    = "Gateway"

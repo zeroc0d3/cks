@@ -9,7 +9,7 @@ terraform {
 
 inputs = {
   vpc_id             = dependency.vpc.outputs.vpc_id
-  security_group_ids = [dependency.vpc.outputs.vpc_default_security_group_id]
+  security_group_ids = [dependency.vpc.outputs.default_security_group_id]
 
   endpoints = {
     s3 = {

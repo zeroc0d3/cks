@@ -16,14 +16,14 @@ inputs = {
       service         = "s3"
       service_type    = "Gateway"
       tags            = { "Name" = "s3-vpc-endpoint" }
-      subnet_ids      = dependency.vpc.outputs.private_subnets_ids
+      subnet_ids      = dependency.vpc.outputs.private_subnets
       route_table_ids = dependency.vpc.outputs.private_route_table_ids
     },
     dynamodb = {
       service         = "dynamodb"
       service_type    = "Gateway"
       tags            = { "Name" = "dynamodb-vpc-endpoint" }
-      subnet_ids      = dependency.vpc.outputs.private_subnets_ids
+      subnet_ids      =  dependency.vpc.outputs.private_subnets
       route_table_ids = dependency.vpc.outputs.private_route_table_ids
     }
   }

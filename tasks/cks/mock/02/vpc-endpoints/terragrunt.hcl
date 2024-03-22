@@ -1,6 +1,7 @@
-dependencies {
-  config_path  = ["../vpc"]
+dependency "vpc" {
+  config_path = "../vpc"
 }
+
 
 terraform {
   source = "git::https://github.com/terraform-aws-modules/terraform-aws-vpc//modules/vpc-endpoints?ref=v5.6.0"

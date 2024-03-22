@@ -1,5 +1,5 @@
 dependencies {
-  paths = ["../vpc"]
+  config_path  = ["../vpc"]
 }
 
 terraform {

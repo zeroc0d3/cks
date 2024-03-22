@@ -1,3 +1,13 @@
+include {
+  path = find_in_parent_folders()
+}
+
+locals {
+  vars = read_terragrunt_config(find_in_parent_folders("env.hcl"))
+}
+
+
+
 dependency "vpc" {
   config_path = "../vpc"
 }

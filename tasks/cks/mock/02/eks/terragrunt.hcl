@@ -86,7 +86,11 @@ inputs = {
     Terraform   = "true"
   }
 
-cluster_service_ipv4_cidr="10.0.48.0/20"
+cluster_service_ipv4_cidr="10.1.48.0/20"
+
+#creating EKS Cluster (stage-localize): operation error EKS: CreateCluster, https response error StatusCode: 400, RequestID: f7701966-f7b9-4aca-96da-8e1fb3ad111b, InvalidParameterException: Invalid Cluster Service Ipv4 CIDR for the cluster stage-localize, overlaps with VPC range 10.0.0.0/16
+
+
 cloudwatch_log_group_retention_in_days= 14
 cloudwatch_log_group_class="INFREQUENT_ACCESS"
 cloudwatch_log_group_tags=  {

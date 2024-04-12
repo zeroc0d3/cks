@@ -87,7 +87,7 @@ inputs = {
   }
 
 cluster_service_ipv4_cidr="10.0.99.0/16"
-cloudwatch_log_group_retention_in_days= 15
+cloudwatch_log_group_retention_in_days= 14
 cloudwatch_log_group_class="INFREQUENT_ACCESS"
 cloudwatch_log_group_tags=  {
 

@@ -18,7 +18,7 @@ terraform {
 }
 
 inputs = {
-  cluster_name    = "my-cluster"
+  cluster_name    = "stage-localize"
   cluster_version = "1.29"
 
   cluster_endpoint_public_access  = true
@@ -33,6 +33,10 @@ inputs = {
     vpc-cni = {
       most_recent = true
     }
+    aws-ebs-csi-driver = {
+      most_recent = true
+    }
+
   }
 
   vpc_id                   = dependency.vpc.outputs.vpc_id

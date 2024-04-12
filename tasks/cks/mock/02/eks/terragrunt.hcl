@@ -86,6 +86,16 @@ inputs = {
     Terraform   = "true"
   }
 
+cluster_service_ipv4_cidr="10.0.99.0/16"
+cloudwatch_log_group_retention_in_days= 15
+cloudwatch_log_group_class="INFREQUENT_ACCESS"
+cloudwatch_log_group_tags=  {
+
+  Environment = "dev"
+    Terraform   = "true"
+}
+
 
 }
 
+#  https://github.com/spotinst/terraform-spotinst-ocean-aws-k8s/blob/v1.3.0/examples/complete_from_eks_module/main.tf

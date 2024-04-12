@@ -86,7 +86,7 @@ inputs = {
     Terraform   = "true"
   }
 
-cluster_service_ipv4_cidr="10.0.0.0/16"
+cluster_service_ipv4_cidr="10.0.48.0/20"
 cloudwatch_log_group_retention_in_days= 14
 cloudwatch_log_group_class="INFREQUENT_ACCESS"
 cloudwatch_log_group_tags=  {

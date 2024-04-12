@@ -14,7 +14,7 @@ dependency "vpc" {
 
 
 terraform {
-  source = "git::https://github.com/terraform-aws-modules/terraform-aws-eks//modules/terraform-aws-eks?ref=v20.8.5"
+  source = "git::https://github.com/terraform-aws-modules/terraform-aws-eks?ref=v20.8.5"
 }
 
 inputs = {
